@@ -10,62 +10,28 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText email, password;
-    private Button login;
-    private String eUsername = "admin", ePassword = "123";
-    boolean valid  ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        email = findViewById(R.id.eEmail);
-        password = findViewById(R.id.ePassword);
-        login = findViewById(R.id.eLogin);
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+  final Intent mainToOption = new Intent(MainActivity.this,optionActivity.class);
+        Thread thread = new Thread() {
+            public void run() {
+                try {
 
-                String inputemail = email.getText().toString();
-                String inputpassword = password.getText().toString();
-                if (inputemail.isEmpty() || inputpassword.isEmpty())
-                {
-                    Toast.makeText(MainActivity.this,"PLEASE ENTER THE DETAILS",Toast.LENGTH_SHORT).show();
+                    sleep(1000);
 
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    startActivity(mainToOption);
                 }
-                else
-                    {
-                    valid = validate(inputemail, inputpassword);
-                    if (valid==false)
-                    {
-                        Toast.makeText(MainActivity.this, "Incorrect Details", Toast.LENGTH_SHORT).show();
-
-                    }
-                    else  {
-                        Toast.makeText(MainActivity.this, "LOGIN SUCCESSFULL", Toast.LENGTH_SHORT).show();
-
-                        Intent intent = new Intent(MainActivity.this, BOOK.class);
-                        startActivity(intent);
-                    }
-                }
-
-
             }
-
-        });
-
-}
-
-
-     boolean validate (String email, String password) {
-        if (email.equals(eUsername) && password.equals(ePassword))
-        {
-            return true;
-        }
-
-            return false;
-
+        };
+        thread.start();
     }
 }

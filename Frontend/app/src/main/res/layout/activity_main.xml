@@ -5,45 +5,24 @@
     android:id="@+id/Login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/teal_200"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/eEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textPersonName"
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="288dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="440dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="156dp"
+        android:fontFamily="@font/alegreya"
+        android:text="XYZ APP"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="70sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.236" />
-
-    <EditText
-        android:id="@+id/ePassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eEmail"
-        app:layout_constraintVertical_bias="0.068" />
-
-    <Button
-        android:id="@+id/eLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.471"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ePassword"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
