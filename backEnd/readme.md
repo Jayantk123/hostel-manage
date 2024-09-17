@@ -1,1 +1,0 @@
-Use for all frontend related stuff.
